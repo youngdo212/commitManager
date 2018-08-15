@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/resources/static/css/style.css">
+  <link rel="stylesheet" href="/resources/static/css/reset.css">
+</head>
+<body>
+  <div class="whole_wrap">
+      <input type="hidden" id="login" name="login" th:value="${session.USER_INFO.login}"/>
+    <div class="title">Commit Manager</div>
+    <div class="nickname_wrap">
+      <span th:text="${session.USER_INFO.name} ? ${session.USER_INFO.name} : ${session.USER_INFO.login}"></span> 님
+    </div>
+    <div class='rest_time_wrap'>
+      <div class='rest_time_message'>오늘의 커밋까지</div>
+      <div class='rest_time'></div>
+    </div>
+    <div class="commit_wrap">
+      <div class='last_commit_time_wrap'>
+        <span class='last_commit_time_message'></span>
+      </div>
+      <div class="commit_list_wrap"></div>
+    </div>
+    <div class="logout_button" onclick="window.location.href='/logout'">로그아웃</div>
+  </div>
+</body>
+<script src='/resources/static/js/index.js'></script>
+
+</html>
